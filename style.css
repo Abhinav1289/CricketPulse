@@ -1,0 +1,138 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 300px;
+    background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00e676; /* Brighter green for impact */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); /* Stronger text shadow */
+    letter-spacing: 2px;
+}
+
+/* Matches List Styling */
+#matches {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1); /* Inner shadow for depth */
+}
+
+/* Scrollbar Styling */
+#matches::-webkit-scrollbar {
+    width: 8px;
+}
+
+#matches::-webkit-scrollbar-thumb {
+    background-color: #00e676;
+    border-radius: 8px;
+}
+
+#matches::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Matches List Item Styling */
+#matches li {
+    background: rgba(255, 255, 255, 0.07); /* Softer background for list items */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px); /* Subtle blur effect for more realism */
+}
+
+/* Hover Effect for Match Cards */
+#matches li:hover {
+    transform: translateY(-8px); /* Slightly larger movement for realism */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+/* Glowing Effect for Match Cards */
+#matches li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+#matches li:hover::before {
+    opacity: 1;
+}
+
+/* Highlight the Live Matches */
+#matches li.live {
+    background: linear-gradient(90deg, #ff1744, #ff5252);
+    color: #fff;
+    border: none;
+    box-shadow: 0 8px 20px rgba(255, 23, 68, 0.5);
+}
+
+/* Animation for Matches Loading */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#matches li {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #00e676;
+}
+
+footer a {
+    color: #00e676;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
